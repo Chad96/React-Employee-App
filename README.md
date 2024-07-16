@@ -1,114 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Pseudocode</title>
-  </head>
-  <body>
-    <!-- Initialize the App -->
-    <!-- Setup Project -->
-    <p>create-react-app my-employee-app</p>
-    <p>setup folder structure: /src/components, /src/hooks, /src/styles</p>
+# Getting Started with Create React App
 
-    <!-- Define State and Data Structure -->
-    <!-- State Management -->
-    <p>useState for employee data</p>
-    <p>useState for search/filter terms</p>
-    <p>useEffect to load initial data from localStorage</p>
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-    <!-- Components -->
-    <!-- App Component -->
-    <p><strong>function App()</strong> {</p>
-    <p>render Header</p>
-    <p>render EmployeeList</p>
-    <p>render EmployeeForm</p>
-    <p>}</p>
+## Available Scripts
 
-    <!-- Header Component -->
-    <p><strong>function Header()</strong> {</p>
-    <p>display app title</p>
-    <p>include search input fields for filtering employees</p>
-    <p>}</p>
+In the project directory, you can run:
 
-    <!-- EmployeeList Component -->
-    <p><strong>function EmployeeList()</strong> {</p>
-    <p>display list of EmployeeCard components</p>
-    <p>filter employees based on search input</p>
-    <p>}</p>
+### `npm start`
 
-    <!-- EmployeeCard Component -->
-    <p><strong>function EmployeeCard({ employee })</strong> {</p>
-    <p>display employee details (name, surname, etc.)</p>
-    <p>include edit button</p>
-    <p>include delete button</p>
-    <p>}</p>
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-    <!-- EmployeeForm Component -->
-    <p><strong>function EmployeeForm()</strong> {</p>
-    <p>
-      form fields: name, surname, email, position, department, phone number,
-      image, start date
-    </p>
-    <p>submit button to save employee details</p>
-    <p>clear button to reset form</p>
-    <p>}</p>
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-    <!-- CRUD Operations -->
-    <!-- Add Employee -->
-    <p><strong>function addEmployee(employee)</strong> {</p>
-    <p>validate input fields</p>
-    <p>update state with new employee</p>
-    <p>update localStorage with new employee</p>
-    <p>}</p>
+### `npm test`
 
-    <!-- Update Employee -->
-    <p>
-      <strong>function updateEmployee(employeeId, updatedDetails)</strong> {
-    </p>
-    <p>populate form with employee data on edit</p>
-    <p>save changes to state</p>
-    <p>save changes to localStorage</p>
-    <p>}</p>
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-    <!-- Delete Employee -->
-    <p><strong>function deleteEmployee(employeeId)</strong> {</p>
-    <p>confirm before deletion</p>
-    <p>remove employee from state</p>
-    <p>remove employee from localStorage</p>
-    <p>}</p>
+### `npm run build`
 
-    <!-- Filter Employees -->
-    <p><strong>function filterEmployees(searchTerms)</strong> {</p>
-    <p>filter employees by name, surname, ID, tenure, department</p>
-    <p>}</p>
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-    <!-- Persistence -->
-    <!-- LocalStorage Integration -->
-    <p><strong>function loadEmployeeData()</strong> {</p>
-    <p>load employee data from localStorage on app load</p>
-    <p>}</p>
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-    <p><strong>function saveEmployeeData()</strong> {</p>
-    <p>save employee data to localStorage on add, update, delete</p>
-    <p>}</p>
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-    <!-- UI/UX -->
-    <!-- Responsive Design -->
-    <p>use CSS/SCSS for styling</p>
-    <p>
-      ensure responsiveness for various screen sizes (320px, 480px, 768px,
-      1024px, 1200px)
-    </p>
+### `npm run eject`
 
-    <!-- Aesthetics -->
-    <p>use pleasing color combinations</p>
-    <p>consistent typography</p>
-    <p>hover effects for interactivity</p>
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-    <!-- Notifications -->
-    <p><strong>function showNotification(message)</strong> {</p>
-    <p>display notifications for add, update, and delete operations</p>
-    <p>}</p>
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-  </body>
-</html>
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
