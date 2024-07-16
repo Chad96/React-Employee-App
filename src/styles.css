@@ -1,0 +1,96 @@
+/* src/styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+header input {
+  margin-top: 10px;
+  padding: 5px;
+  width: 80%;
+  max-width: 300px;
+}
+
+.App {
+  padding: 20px;
+}
+
+form {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+.employee-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.employee-card {
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px);
+}
+
+.employee-card img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.employee-card h2 {
+  margin: 10px 0;
+}
+
+.employee-card p {
+  margin: 5px 0;
+}
+
+.employee-card button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+.employee-card button:hover {
+  background-color: #c82333;
+}
