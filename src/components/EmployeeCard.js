@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles.css"; // Ensure to import your CSS file
 
 const EmployeeCard = ({ employee, onEdit, onDelete }) => {
   const isExternalUrl = (url) => {
@@ -27,8 +28,10 @@ const EmployeeCard = ({ employee, onEdit, onDelete }) => {
       <p>Department: {employee.department}</p>
       <p>Phone: {employee.phone}</p>
       <p>Start Date: {employee.startDate}</p>
-      <button onClick={() => onEdit(employee.id)}>Edit</button>
-      <button onClick={() => onDelete(employee.id)}>Delete</button>
+      <div>
+        <button onClick={() => onEdit(employee.id)}>Edit</button>
+        <button onClick={() => onDelete(employee.id)}>Delete</button>
+      </div>
     </div>
   );
 };
