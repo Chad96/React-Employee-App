@@ -21,15 +21,33 @@ const EmployeeForm = ({ currentEmployee, onSave }) => {
   }, [currentEmployee]);
 
   const handleChange = (e) => {
-    setFormState({
-      ...formState,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value, files } = e.target;
+    if (name === "image" && files && files[0]) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setFormState({
+          ...formState,
+          image: reader.result,
+        });
+      };
+      reader.readAsDataURL(files[0]);
+    } else {
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onSave(formState);
+    // Save to localStorage
+    const employees = JSON.parse(localStorage.getItem("employees")) || [];
+    const updatedEmployees = currentEmployee
+      ? employees.map((emp) => (emp.id === formState.id ? formState : emp))
+      : [...employees, { ...formState, id: new Date().getTime() }];
+    localStorage.setItem("employees", JSON.stringify(updatedEmployees));
     setFormState({
       id: "",
       name: "",
@@ -94,10 +112,9 @@ const EmployeeForm = ({ currentEmployee, onSave }) => {
         required
       />
       <input
-        type="url"
+        type="file"
         name="image"
-        placeholder="Image URL"
-        value={formState.image}
+        accept="image/*"
         onChange={handleChange}
         required
       />
