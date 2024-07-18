@@ -1,18 +1,30 @@
 // src/components/EmployeeList.js
 import React from "react";
-import EmployeeCard from "./EmployeeCard";
 
-const EmployeeList = ({ employees, onEdit, onDelete }) => {
+const EmployeeList = ({ employees }) => {
   return (
-    <div className="employee-list">
-      {employees.map((employee) => (
-        <EmployeeCard
-          key={employee.id}
-          employee={employee}
-          onEdit={onEdit}
-          onDelete={onDelete}
-        />
-      ))}
+    <div>
+      <h2>Saved Employees</h2>
+      <ul>
+        {employees.map((employee, index) => (
+          <li key={index}>
+            <img
+              src={employee.image}
+              alt={`${employee.name} ${employee.surname}`}
+              width="50"
+              height="50"
+            />
+            <p>
+              {employee.name} {employee.surname}
+            </p>
+            <p>{employee.email}</p>
+            <p>{employee.position}</p>
+            <p>{employee.department}</p>
+            <p>{employee.phone}</p>
+            <p>{employee.startDate}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

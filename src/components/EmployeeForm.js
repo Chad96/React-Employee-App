@@ -1,62 +1,40 @@
 // src/components/EmployeeForm.js
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-const EmployeeForm = ({ currentEmployee, onSave }) => {
-  const [formState, setFormState] = useState({
-    id: "",
+const EmployeeForm = ({ addEmployee }) => {
+  const [employee, setEmployee] = useState({
     name: "",
     surname: "",
+    id: "",
     email: "",
     position: "",
     department: "",
     phone: "",
-    image: "",
+    image: null,
     startDate: "",
   });
 
-  useEffect(() => {
-    if (currentEmployee) {
-      setFormState(currentEmployee);
-    }
-  }, [currentEmployee]);
-
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (name === "image" && files && files[0]) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setFormState({
-          ...formState,
-          image: reader.result,
-        });
-      };
-      reader.readAsDataURL(files[0]);
-    } else {
-      setFormState({
-        ...formState,
-        [name]: value,
-      });
-    }
+    const { name, value } = e.target;
+    setEmployee({ ...employee, [name]: value });
+  };
+
+  const handleImageChange = (e) => {
+    setEmployee({ ...employee, image: URL.createObjectURL(e.target.files[0]) });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSave(formState);
-    // Save to localStorage
-    const employees = JSON.parse(localStorage.getItem("employees")) || [];
-    const updatedEmployees = currentEmployee
-      ? employees.map((emp) => (emp.id === formState.id ? formState : emp))
-      : [...employees, { ...formState, id: new Date().getTime() }];
-    localStorage.setItem("employees", JSON.stringify(updatedEmployees));
-    setFormState({
-      id: "",
+    addEmployee(employee);
+    setEmployee({
       name: "",
       surname: "",
+      id: "",
       email: "",
       position: "",
       department: "",
       phone: "",
-      image: "",
+      image: null,
       startDate: "",
     });
   };
@@ -64,69 +42,68 @@ const EmployeeForm = ({ currentEmployee, onSave }) => {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        type="text"
         name="name"
+        value={employee.name}
+        onChange={handleChange}
         placeholder="Name"
-        value={formState.name}
-        onChange={handleChange}
         required
       />
       <input
-        type="text"
         name="surname"
+        value={employee.surname}
+        onChange={handleChange}
         placeholder="Surname"
-        value={formState.surname}
-        onChange={handleChange}
         required
       />
       <input
-        type="email"
+        name="id"
+        value={employee.id}
+        onChange={handleChange}
+        placeholder="ID Number"
+        required
+      />
+      <input
         name="email"
+        value={employee.email}
+        onChange={handleChange}
         placeholder="Email"
-        value={formState.email}
-        onChange={handleChange}
         required
       />
       <input
-        type="text"
         name="position"
+        value={employee.position}
+        onChange={handleChange}
         placeholder="Position"
-        value={formState.position}
-        onChange={handleChange}
         required
       />
       <input
-        type="text"
         name="department"
+        value={employee.department}
+        onChange={handleChange}
         placeholder="Department"
-        value={formState.department}
-        onChange={handleChange}
         required
       />
       <input
-        type="text"
         name="phone"
+        value={employee.phone}
+        onChange={handleChange}
         placeholder="Phone"
-        value={formState.phone}
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="file"
-        name="image"
-        accept="image/*"
-        onChange={handleChange}
         required
       />
       <input
         type="date"
         name="startDate"
-        placeholder="Start Date"
-        value={formState.startDate}
+        value={employee.startDate}
         onChange={handleChange}
         required
       />
-      <button type="submit">Save</button>
+      <input
+        type="file"
+        onChange={handleImageChange}
+        accept="image/*"
+        required
+      />
+      <button type="submit">Add Employee</button>
     </form>
   );
 };
