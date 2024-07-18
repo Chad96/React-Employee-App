@@ -162,3 +162,52 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+
+/* Styles for responsiveness */
+@media (max-width: 768px) {
+  .employee-card {
+    width: calc(50% - 20px); /* Adjust width to fit 2 cards */
+    padding: 12px;
+    margin: 12px;
+  }
+
+  .employee-card h2 {
+    font-size: 1.25em;
+  }
+
+  .employee-card p {
+    font-size: 0.9em;
+    word-wrap: break-word; /* Ensure text wraps inside the card */
+    overflow-wrap: break-word; /* Ensure text wraps inside the card */
+  }
+
+  .employee-card button {
+    padding: 6px 12px;
+    margin: 6px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .employee-card {
+    width: calc(100% - 20px); /* Adjust width to fit 1 card */
+    padding: 8px;
+    margin: 8px;
+  }
+
+  .employee-card h2 {
+    font-size: 1em;
+  }
+
+  .employee-card p {
+    font-size: 0.8em;
+    word-wrap: break-word; /* Ensure text wraps inside the card */
+    overflow-wrap: break-word; /* Ensure text wraps inside the card */
+  }
+
+  .employee-card button {
+    padding: 4px 8px;
+    margin: 4px;
+    font-size: 0.8em;
+  }
+}
