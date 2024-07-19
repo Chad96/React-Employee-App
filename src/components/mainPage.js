@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Sidebar({ setShowAddForm }) {
+function mainPage({ setShowAddForm }) {
   return (
-    <div className="sidebar">
-      <h2>Admin Portal</h2>
+    <div className="mainPage">
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -20,4 +19,4 @@ function Sidebar({ setShowAddForm }) {
   );
 }
 
-export default Sidebar;
+export default mainPage;
