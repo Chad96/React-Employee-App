@@ -1,38 +1,535 @@
-.App {
-  text-align: center;
+/* Sidebar.css */
+.sidebar {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  width: 100%;
+  height: 80px;
+  padding: 10px 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidebar h2 {
+  font-size: 18px;
+  margin-right: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+}
+
+.sidebar ul li {
+  margin: 0 10px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-size: 16px;
+  display: block;
+  padding: 10px;
+  transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: #34495e;
+  border-radius: 5px;
+}
+
+.add-button {
+  background-color: #3498db;
+  color: #ecf0f1;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.add-button:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    height: auto;
+    padding: 20px 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar h2 {
+    margin-bottom: 20px;
+  }
+
+  .sidebar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar ul li {
+    margin: 10px 0;
+  }
+
+  .add-button {
+    margin-top: 20px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 10px;
+  }
+
+  .sidebar ul li a {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .add-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* EmployeeList.css */
+.employee-list {
+  padding: 20px;
+  background-color: #ecf0f1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.employee-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .employee-list {
+    padding: 15px;
+  }
+
+  .employee-cards {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-input {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+/* EmployeeCard.css */
+.employee-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 350px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.employee-card .employee-details {
+  margin-bottom: 60px; /* Increased margin-bottom to create more space */
+}
+
+.employee-card input[type="text"],
+.employee-card input[type="email"],
+.employee-card input[type="tel"],
+.employee-card input[type="date"],
+.employee-card input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.employee-card input[type="file"] {
+  padding: 0;
+}
+
+.employee-card .image-preview {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.employee-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #2c3e50;
+}
+
+.employee-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #34495e;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.button-container button {
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.save-button {
+  background-color: #27ae60;
+  color: #ffffff;
+}
+
+.save-button:hover {
+  background-color: #229954;
+}
+
+.cancel-button {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+.cancel-button:hover {
+  background-color: #c0392b;
+}
+
+.edit-button {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+.edit-button:hover {
+  background-color: #2980b9;
+}
+
+.delete-button {
+  background-color: #e67e22;
+  color: #ffffff;
+}
+
+.delete-button:hover {
+  background-color: #d35400;
+}
+
+@media (max-width: 768px) {
+  .employee-card {
+    max-width: 100%;
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .employee-card input[type="text"],
+  .employee-card input[type="email"],
+  .employee-card input[type="tel"],
+  .employee-card input[type="date"] {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .employee-card button {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .employee-card {
+    padding: 15px;
+    padding-bottom: 80px; /* Adjust space for buttons */
+  }
+
+  .employee-card input[type="text"],
+  .employee-card input[type="email"],
+  .employee-card input[type="tel"],
+  .employee-card input[type="date"] {
+    font-size: 10px;
+    padding: 6px;
+  }
+
+  .employee-card button {
+    font-size: 10px;
+    padding: 6px;
+  }
+}
+
+/* App.css */
+.app {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f6f9;
+}
+
+.sidebar {
+  width: 100%;
+  max-height: 60px; /* Adjusted for bottom sidebar */
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #2c3e50;
+  color: #ffffff;
+  position: fixed; /* Fixed positioning */
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.sidebar li {
+  margin: 0 15px;
+}
+
+.sidebar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: #1abc9c;
+}
+
+.main-content {
+  flex: 1;
+  margin-bottom: 60px; /* Space for the fixed sidebar */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.welcome {
+  font-size: 24px;
+  color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    max-height: 50px;
+  }
+
+  .sidebar h2 {
+    font-size: 16px;
+  }
+
+  .sidebar a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    max-height: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sidebar h2 {
+    font-size: 14px;
+  }
+
+  .sidebar ul {
+    flex-direction: column;
+  }
+
+  .sidebar li {
+    margin: 5px 0;
+  }
+
+  .sidebar a {
+    font-size: 10px;
+  }
+
+  .main-content {
+    margin-bottom: 40px;
+    padding: 10px;
+  }
+}
+
+/* AddEmployeeForm.css */
+.add-employee-form {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding-bottom: 100px; /* Ensure space for sidebar */
+}
+
+.add-employee-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.add-employee-form input[type="text"],
+.add-employee-form input[type="email"],
+.add-employee-form input[type="tel"],
+.add-employee-form input[type="date"],
+.add-employee-form input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.add-employee-form input[type="file"] {
+  padding: 0;
+}
+
+.add-employee-form .image-preview {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.add-employee-form button {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-employee-form button:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .add-employee-form {
+    padding: 15px;
+    padding-bottom: 90px; /* Adjust space for sidebar */
+  }
+
+  .add-employee-form input[type="text"],
+  .add-employee-form input[type="email"],
+  .add-employee-form input[type="tel"],
+  .add-employee-form input[type="date"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .add-employee-form button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-employee-form {
+    padding: 10px;
+    padding-bottom: 80px; /* Adjust space for sidebar */
+  }
+
+  .add-employee-form input[type="text"],
+  .add-employee-form input[type="email"],
+  .add-employee-form input[type="tel"],
+  .add-employee-form input[type="date"] {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .add-employee-form button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+/* App.css */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-left: 2.5%;
+  margin-top: 3.5%;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
+  text-align: center;
+  z-index: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.hero-text h1 {
+  font-size: 3rem; /* Adjust font size as needed */
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Ensure that the rest of the content does not overlap with the hero section */
+.main-content {
+  margin-top: 0; /* Adjust margin if needed */
 }

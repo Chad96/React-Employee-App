@@ -1,70 +1,112 @@
-# Getting Started with Create React App
+Topic: React JS
+Submission Date: 18 July 2024
+Time: 10:00
+Please submit by pushing to your github repository and sharing the link on Slack with your
+mentor.
+Title: Task 5 - React Employee App
+Objective
+The objective of this task is to assess your understanding of array methods, array
+manipulation, objects, React’s useState hook, props and also introduce you to JavaScript’s
+local storage.
+This is the second official task for React based on Lesson 2.
+Scenario: You are hired to create a simple admin portal by an organisation. The
+organisation wants to be able to easily track the current employees they have on this
+portal. The portal should track the following main details about all employees:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1.
+2.
+3.
+4.
+5.
+6. Name and surname
+   ID number
+   Email address
+   Employee position
+   Phone number
+   Image
+   User interface
+7. Create a user-friendly interface that is intuitive and easy to use
+8. Allow admins to view, update, add and delete added employees
+9. The interface should be responsive to different screens
+10. Interface should make use of aesthetically pleasing color combinations
+11. The interface should have a good layout that is easy to navigate
+12. The interface should have relevant inputs to store the following details about the
+    employee
+    a. Name
+    b. Surname
+    c. Email address
+    d. Employee position
+    e. Employee departmentf. Phone number
+    g. Image of the employee
+    h. Date employee started working at the organisation
+13. The interface should also include search fields to help filter out employees
+    Features
+14. Admins should be able to do CRUD operations on the application
+    a. Add new employees
+    b. View already added employees
+    c. Update details of added employees
+    d. Delete added employees
+15. Admins should be able to filter (search) employees based on
+    a. Employee name
+    b. Employee surname
+    c. Employee ID number
+    d. Number of years/months/days at the organisation
+    e. Employee departments
+    Persistence
+16. Make use of localStorage to store the employee’s details
+    Concepts the task covers
+17. Arrays and array methods
+18. Objects and object methods
+19. LocalStorage
+20. React components
+21. React state
+22. React props
+23. React hooks
+24. JSON object and its methods
+25. Web page responsivenessInstructions:
+26. Come up with your own design for the problem statement
+27. Create a React application that mimics your design to solve the problem
+28. Make use of components wherever applicable
+29. In terms of CSS the portal should be as responsive as possible, meaning it should
+    be fully accessible on all platforms, whether desktop, laptop or mobile devices. All
+    this without distorting the inputs you will have on the screen.
+30. The main point of data storage will be local storage, which will allow you to add,
+    update and delete from it.
+31. You are allowed to use libraries in this project as long as they do not get in the way
+    of you addressing the requirements of the app. Eg Tailwind for CSS
+32. You are to submit in the form of a github link, if hosted on a website include the
+    link on your ReadMe file on Github.
+    Evaluation Criteria:
+33. Documentation of the planning process
+    ○ Mood board
+    ○ Step by step approach to the problem (high level algorithm)
+    ○ Pseudocode
+34. User-friendliness of the design
+    ○ Is the design intuitive
+    ○ Does the design have a proper and understandable layout
+    ○ Does the app flow from one function to another in an understandable and
+    easy to follow manner
+    ○ Does the app show notifications for processes occurring in the background
+35. Overall design of the application
+    ○ Does the design have colors that blend well together
+    ○ Does the design maintain a consistent typography
+36. Page interactivity
+    ○ Does the mouse cursor change when hovering over clickable elements
+    ○ Do clickable elements change color when hovered over to indicate
+    interactivity
+    ○ It is easy to navigate through the application’s different pages (if more than
+    one utilised)
+37. Utilisation of React.js features
+    ○ Did trainee create their own components
+    ○ Were the components reused where appropriate
+    ○ Was React state utilised properly
+    ○ Were props sent and handled properly○ Were reused components customised for similar design elements instead of
+    creating new elements
+38. Responsiveness of the page
+    ○ Is the page responsive to different web view sizes at these common
+    breakpoints:
+    ■ 320px
+    ■ 480px
+    ■ 768px
+    ■ 1024px
+    ■ 1200px
