@@ -1,0 +1,80 @@
+Step-by-Step Guide to Building an Employee Management App
+Step 1: Setup Project
+Create a React App:
+Open your terminal and run:
+sh
+Copy code
+npx create-react-app my-employee-app
+Setup Folder Structure:
+Inside the src folder, create the following subfolders:
+bash
+Copy code
+/src
+  /components
+  /hooks
+  /styles
+Step 2: Define State and Data Structure
+State Management:
+Use useState to manage employee data.
+Use useState to manage search/filter terms.
+Use useEffect to load initial data from localStorage when the app loads.
+Step 3: Define Components
+App Component:
+
+Renders the Header, EmployeeList, and EmployeeForm components.
+Header Component:
+
+Displays the app title.
+Includes search input fields for filtering employees.
+EmployeeList Component:
+
+Displays a list of EmployeeCard components.
+Filters employees based on search input.
+EmployeeCard Component:
+
+Displays employee details (e.g., name, surname).
+Includes buttons for editing and deleting the employee.
+EmployeeForm Component:
+
+Form fields for employee details: name, surname, email, position, department, phone number, image, start date.
+Submit button to save employee details.
+Clear button to reset the form.
+Step 4: CRUD Operations
+Add Employee:
+
+Validate input fields.
+Update state with the new employee.
+Update localStorage with the new employee.
+Update Employee:
+
+Populate the form with employee data for editing.
+Save changes to state.
+Save changes to localStorage.
+Delete Employee:
+
+Confirm before deletion.
+Remove employee from state.
+Remove employee from localStorage.
+Filter Employees:
+
+Filter employees by name, surname, ID, tenure, department.
+Step 5: Persistence
+Load Employee Data:
+
+Load employee data from localStorage when the app loads.
+Save Employee Data:
+
+Save employee data to localStorage on add, update, and delete operations.
+Step 6: UI/UX
+Responsive Design:
+
+Use CSS/SCSS for styling.
+Ensure responsiveness for various screen sizes (e.g., 320px, 480px, 768px, 1024px, 1200px).
+Aesthetics:
+
+Use pleasing color combinations.
+Maintain consistent typography.
+Add hover effects for interactivity.
+Step 7: Notifications
+Show Notifications:
+Display notifications for add, update, and delete operations.
